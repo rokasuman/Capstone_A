@@ -39,6 +39,7 @@ import Pediatricians from './Pediatricians.svg'
 import facebook from './facebook_icon.png'
 import twitter from './twitter_icon.png'
 import linkedin from "./linkedin_icon.png"
+import aboutHeader from './about_header.png'
 
 
 export const assets = {
@@ -61,7 +62,8 @@ export const assets = {
     razorpay_logo,
     facebook,
     twitter,
-    linkedin
+    linkedin,
+    aboutHeader
 
 
 }

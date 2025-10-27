@@ -28,8 +28,8 @@ const Doctors = () => {
             >
               <img
                 src={doctor.image}
-                alt={doctor.name}
-                className="w-full h-48 object-cover"
+                alt=''
+                className="w-full h-48 object-cover md:w-full sm:w-full sm:object-cover md:object-cover"
               />
               <div className="p-4">
                 <div className="flex justify-between items-center mb-2">
