@@ -1,26 +1,30 @@
-import express from 'express'
-import cors from 'cors'
-import 'dotenv/config'
-import connectDB from './config/mongodb.js'
-import connectCloudinary from './config/cloudinary.js'
-import adminRouter from './routes/adminRoute.js'
+import express from 'express';
+import cors from 'cors';
+import 'dotenv/config';
+import connectDB from './config/mongodb.js';
+import connectCloudinary from './config/cloudinary.js';
+import adminRouter from './routes/adminRoute.js';
 
-//app comfig
-const app = express()
-const port = process.env.PORT || 4000
-connectDB()
-connectCloudinary()
+// App config
+const app = express();
+const port = process.env.PORT || 4000;
 
-//middleware
-app.use(express.json())
-app.use(cors())
+// Connect to database and cloudinary
+connectDB();
+connectCloudinary();
 
-//api emdpoints
-app.use('/api/adim',adminRouter)
+// Middleware
+app.use(express.json());
+app.use(cors());
 
-app.get('/',(req,res)=>{
-    res.send("api is working so great")
-})
+// API endpoints
+app.use('/api/admin', adminRouter);
 
-//api
-app.listen(port,()=>console.log("server started",port))
+
+// Test route
+app.get('/', (req, res) => {
+  res.send('API is working so great');
+});
+
+// Start server
+app.listen(port, () => console.log(`Server started at port ${port}`));
